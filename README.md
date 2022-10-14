@@ -14,3 +14,12 @@ install tasmota on the device and put a0 into analog mode and d1 into relais mod
 # fog maschine used
 Showlite SN-1200 Nebelmaschine
 https://amzn.to/3MuinKp (ref link)
+
+# Install
+1) clone repository
+2) run "npm i"
+3) update settings.json 
+4) run "node index.js"
+
+# Trigger fog maschine
+run "http://localhost/fog"
