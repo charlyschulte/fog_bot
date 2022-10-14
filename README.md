@@ -10,3 +10,7 @@ Use the led wires (15v), connect it to a 1kohm resistor and a 100ohm resistor (v
 to get 1,3V out of it. connect the wires to ground and the analog input of the wemos d1, also connect the physical button of the fog remote to a relais and connect it to d1 of the wemos.
 ##next
 install tasmota on the device and put a0 into analog mode and d1 into relais mode.
+
+#fog maschine used:
+Showlite SN-1200 Nebelmaschine
+https://amzn.to/3MuinKp (ref link)
