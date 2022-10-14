@@ -1,6 +1,6 @@
 {
-    "fogurl":"http://192.168.176.175",
-    "fogruntime":50,
-    "fogwaitingtime":10000,
-    "debug":true
+    "fogurl":"http://192.168.176.175", //Ip of tasmota fog maschine
+    "fogruntime":3000, // 3 Second run time
+    "fogwaitingtime":10000, //10 Seconds check time
+    "debug":true // Show debug messages in terminal
 }
