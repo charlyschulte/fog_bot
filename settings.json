@@ -1,0 +1,6 @@
+{
+    "fogurl":"http://192.168.176.175",
+    "fogruntime":50,
+    "fogwaitingtime":10000,
+    "debug":true
+}
