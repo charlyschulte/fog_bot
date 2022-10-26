@@ -22,4 +22,4 @@ https://amzn.to/3MuinKp (ref link)
 4) run "node index.js"
 
 # Trigger fog maschine
-run "http://localhost/fog"
+run "http://localhost:3000/fog"
