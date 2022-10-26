@@ -19,6 +19,7 @@ async function requestfogmaschine() {
   if (fogvalue > 18) {
     log("Fog Turned on");
     runfogmaschine(true);
+    fogStartCallback(FogQue + 1);
   } else {
     log("Fog Maschine is not ready yet");
     FogQue += 1;
@@ -34,7 +35,6 @@ function runFogCue() {
   if (FogQue) {
     FogQue -= 1;
     requestfogmaschine();
-    fogStartCallback(FogQue + 1);
   }
   setTimeout(runFogCue, parsedJSON.fogwaitingtime);
 }
