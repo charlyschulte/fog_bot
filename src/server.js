@@ -42,7 +42,7 @@ function addedCueCallback(cueCount) {
   }
 }
 
-export function fogStartCallback(cueCount) {
+function fogStartCallback(cueCount) {
     if (
       parsedJSON.fogStartCallback !== undefined &&
       parsedJSON.fogStartCallback.url !== undefined &&
@@ -77,3 +77,4 @@ function runApi() {
   });
 }
 exports.runApi = runApi;
+exports.fogStartCallback = fogStartCallback;
