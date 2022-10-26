@@ -19,7 +19,7 @@ async function requestfogmaschine() {
   if (fogvalue > 18) {
     log("Fog Turned on");
     runfogmaschine(true);
-    fogStartCallback(FogQue + 1);
+    fogStartCallback(FogQue);
   } else {
     log("Fog Maschine is not ready yet");
     FogQue += 1;
