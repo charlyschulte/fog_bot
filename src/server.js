@@ -8,7 +8,7 @@ const apicaller = axios.create({
   timeout: 1000,
 });
 app.get("/fog", (req, res) => {
-  //addFog();
+  addFog();
   callApi(getCurrentFogCueCount());
   res.send("Fog Added, current Cue: " + getCurrentFogCueCount());
 });
