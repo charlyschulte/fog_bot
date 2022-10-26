@@ -2,6 +2,7 @@
 const axios = require("axios");
 const parsedJSON = require('../settings.json');
 const {log} = require('./log');
+const { fogStartCallback } = require("./server");
 let FogQue=0;
 const FogApi = axios.create({
     baseURL: parsedJSON.fogurl,
@@ -36,6 +37,7 @@ function runFogCue(){
     if(FogQue){
         FogQue-=1;
         requestfogmaschine();
+        fogStartCallback(FogQue+1)
     }
     setTimeout(runFogCue,parsedJSON.fogwaitingtime);
 }

@@ -9,28 +9,28 @@ const apicaller = axios.create({
 });
 app.get("/fog", (req, res) => {
   addFog();
-  callApi(getCurrentFogCueCount());
+  addedCueCallback(getCurrentFogCueCount());
   res.send("Fog Added, current Cue: " + getCurrentFogCueCount());
 });
-function callApi(cueCount) {
+function addedCueCallback(cueCount) {
   if (
-    parsedJSON.callback !== undefined &&
-    parsedJSON.callback.url !== undefined &&
-    parsedJSON.callback.param !== undefined
+    parsedJSON.addedCueCallback !== undefined &&
+    parsedJSON.addedCueCallback.url !== undefined &&
+    parsedJSON.addedCueCallback.param !== undefined
   ) {
     log(
       "Calling url:" +
-        parsedJSON.callback.url +
+        parsedJSON.addedCueCallback.url +
         "?" +
-        parsedJSON.callback.param +
+        parsedJSON.addedCueCallback.param +
         "=" +
         cueCount
     );
     apicaller
       .get(
-        parsedJSON.callback.url +
+        parsedJSON.addedCueCallback.url +
           "?" +
-          parsedJSON.callback.param +
+          parsedJSON.addedCueCallback.param +
           "=" +
           cueCount
       )
@@ -41,6 +41,36 @@ function callApi(cueCount) {
       });
   }
 }
+
+export function fogStartCallback(cueCount) {
+    if (
+      parsedJSON.fogStartCallback !== undefined &&
+      parsedJSON.fogStartCallback.url !== undefined &&
+      parsedJSON.fogStartCallback.param !== undefined
+    ) {
+      log(
+        "Calling url:" +
+          parsedJSON.fogStartCallback.url +
+          "?" +
+          parsedJSON.fogStartCallback.param +
+          "=" +
+          cueCount
+      );
+      apicaller
+        .get(
+          parsedJSON.fogStartCallback.url +
+            "?" +
+            parsedJSON.fogStartCallback.param +
+            "=" +
+            cueCount
+        )
+        .then((response) => {
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  }
 function runApi() {
   app.listen(3000, () => {
     log("Server is up!");
