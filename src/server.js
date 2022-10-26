@@ -12,6 +12,7 @@ app.get("/fog", (req, res) => {
   addedCueCallback(getCurrentFogCueCount());
   res.send("Fog Added, current Cue: " + getCurrentFogCueCount());
 });
+
 function addedCueCallback(cueCount) {
   if (
     parsedJSON.addedCueCallback !== undefined &&
@@ -34,47 +35,16 @@ function addedCueCallback(cueCount) {
           "=" +
           cueCount
       )
-      .then((response) => {
-      })
+      .then((response) => {})
       .catch((error) => {
         console.log(error);
       });
   }
 }
 
-function fogStartCallback(cueCount) {
-    if (
-      parsedJSON.fogStartCallback !== undefined &&
-      parsedJSON.fogStartCallback.url !== undefined &&
-      parsedJSON.fogStartCallback.param !== undefined
-    ) {
-      log(
-        "Calling url:" +
-          parsedJSON.fogStartCallback.url +
-          "?" +
-          parsedJSON.fogStartCallback.param +
-          "=" +
-          cueCount
-      );
-      apicaller
-        .get(
-          parsedJSON.fogStartCallback.url +
-            "?" +
-            parsedJSON.fogStartCallback.param +
-            "=" +
-            cueCount
-        )
-        .then((response) => {
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }
-  }
 function runApi() {
   app.listen(3000, () => {
     log("Server is up!");
   });
 }
 exports.runApi = runApi;
-exports.fogStartCallback = fogStartCallback;
