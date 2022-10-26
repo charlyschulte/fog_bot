@@ -18,6 +18,14 @@ function callApi(cueCount) {
     parsedJSON.callback.url !== undefined &&
     parsedJSON.callback.param !== undefined
   ) {
+    log(
+      "Calling url:" +
+        parsedJSON.callback.url +
+        "?" +
+        parsedJSON.callback.param +
+        "=" +
+        cueCount
+    );
     apicaller
       .get(
         parsedJSON.callback.url +
