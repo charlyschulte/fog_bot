@@ -23,3 +23,9 @@ https://amzn.to/3MuinKp (ref link)
 
 # Trigger fog maschine
 run "http://localhost:3000/fog"
+
+
+# Docker startup 
+```bash
+docker-compose up -d --force-recreate --build
+```

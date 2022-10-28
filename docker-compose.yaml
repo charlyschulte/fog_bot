@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+  twitchbot:
+    build: .
+    image: fogbot
+    ports:
+     - 3000:3000
